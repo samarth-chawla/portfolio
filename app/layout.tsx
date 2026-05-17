@@ -25,8 +25,10 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Samarth Chawla - Portfolio",
+
   description:
     "Samarth Chawla - Full Stack Developer interested in building scalable web applications and learning new technologies.",
+
   keywords: [
     "Samarth Chawla",
     "Full Stack Developer",
@@ -34,10 +36,54 @@ export const metadata: Metadata = {
     "React Developer",
     "Web Developer Portfolio",
   ],
-  icons: {
+
+    icons: {
     icon: [
-       { url: "/logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/favicon.ico", sizes: "192x192", type: "image/x-icon" },
+      { url: "/favicon.ico", sizes: "512x512", type: "image/x-icon" },
     ],
+
+    apple: [
+      { url: "/favicon.ico", sizes: "180x180", type: "image/x-icon" },
+    ],
+
+    shortcut: ["/favicon.ico"],
+  },
+
+
+  openGraph: {
+    title: "Samarth Chawla - Portfolio",
+
+    description:
+      "Full-Stack Developer building scalable web applications, API-driven systems & modern digital experiences.",
+
+    url: "https://www.samarthworks.in",
+
+    siteName: "Samarth Chawla",
+
+    images: [
+      {
+        url: "https://www.samarthworks.in/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Samarth Chawla Portfolio",
+      },
+    ],
+
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title: "Samarth Chawla - Portfolio",
+
+    description:
+      "Full-Stack Developer building scalable web applications, API-driven systems & modern digital experiences.",
+
+    images: ["https://www.samarthworks.in/og-image.png"],
   },
 };
 

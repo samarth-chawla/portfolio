@@ -143,7 +143,7 @@ const ProjectPreview = ({ project }: { project: ProjectItem }) => {
 
   return (
     <div className="flex h-full w-full items-center justify-center">
-      <div className="relative w-full h-full bg-gradient-to-br from-slate-50 to-white dark:from-[#0f0f0f] dark:to-[#1a1a1a]">
+      <div className="relative w-full h-full bg-linear-to-br from-slate-50 to-white dark:from-[#0f0f0f] dark:to-[#1a1a1a]">
         {hasPreview ? (
           <>
             <iframe
@@ -157,7 +157,7 @@ const ProjectPreview = ({ project }: { project: ProjectItem }) => {
               className="h-full w-full border-0"
             />
             {isLoading && (
-              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-slate-50 to-white dark:from-[#0f0f0f] dark:to-[#1a1a1a]">
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-linear-to-br from-slate-50 to-white dark:from-[#0f0f0f] dark:to-[#1a1a1a]">
                 <div className="relative">
                   <div className="h-12 w-12 rounded-full border-2 border-neutral-200 dark:border-neutral-800" />
                   <div className="absolute inset-0 h-12 w-12 rounded-full border-2 border-t-emerald-500 animate-spin" />
@@ -171,7 +171,7 @@ const ProjectPreview = ({ project }: { project: ProjectItem }) => {
         ) : (
           <div className="flex h-full w-full flex-col items-center justify-center gap-4">
             <div
-              className={`rounded-2xl bg-gradient-to-br p-4 ${project.accent}`}
+              className={`rounded-2xl bg-linear-to-br p-4 ${project.accent}`}
             >
               <project.icon size={32} className="text-neutral-900" />
             </div>
@@ -235,7 +235,7 @@ const Projects = () => {
           variants={itemVariants}
           className="grid gap-5 lg:grid-cols-[220px_1fr] lg:items-start"
         >
-          <aside className="rounded-xl border border-neutral-200/80 bg-white/80 p-3 shadow-sm backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.04]">
+          <aside className="rounded-xl border border-neutral-200/80 bg-white/80 p-3 shadow-sm backdrop-blur-sm dark:border-white/10 dark:bg-white/4">
             <div className="hidden lg:block">
               <p className="mb-3 text-xs uppercase tracking-[0.28em] text-neutral-500 dark:text-neutral-400">
                 Index
@@ -249,7 +249,7 @@ const Projects = () => {
                     className={`w-full rounded-md px-3 py-2 text-left text-sm font-medium transition-colors ${
                       i === activeIndex
                         ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
-                        : "text-neutral-600 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-white/[0.02]"
+                        : "text-neutral-600 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-white/2"
                     }`}
                   >
                     <div className="flex items-center gap-2">
@@ -289,7 +289,7 @@ const Projects = () => {
                     <ChevronLeft size={16} />
                   </button>
 
-                  <div className="min-w-0 rounded-lg border border-neutral-200 bg-white/60 px-3 py-2 text-center shadow-sm dark:border-white/10 dark:bg-white/[0.04]">
+                  <div className="min-w-0 rounded-lg border border-neutral-200 bg-white/60 px-3 py-2 text-center shadow-sm dark:border-white/10 dark:bg-white/4">
                     <p className="truncate text-sm font-semibold text-neutral-900 dark:text-neutral-100">
                       {activeProject.title}
                     </p>
@@ -308,16 +308,16 @@ const Projects = () => {
             </div>
           </aside>
 
-          <div className="flex flex-col overflow-hidden rounded-xl border border-neutral-200/80 bg-white/80 shadow-sm backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.04]">
+          <div className="flex flex-col overflow-hidden rounded-xl border border-neutral-200/80 bg-white/80 shadow-sm backdrop-blur-sm dark:border-white/10 dark:bg-white/4">
             <div className="relative hidden lg:block">
               <div
-                className={`absolute inset-x-0 top-0 z-10 h-1 bg-gradient-to-r ${activeProject.accent}`}
+                className={`absolute inset-x-0 top-0 z-10 h-1 bg-linear-to-r ${activeProject.accent}`}
               />
 
               <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 border-b border-neutral-200/80 bg-white/60 px-4 py-3 backdrop-blur-sm dark:border-white/10 dark:bg-black/20">
                 <div className="flex items-center gap-3">
                   <div
-                    className={`rounded-lg bg-gradient-to-br p-1.5 ${activeProject.accent}`}
+                    className={`rounded-lg bg-linear-to-br p-1.5 ${activeProject.accent}`}
                   >
                     <ActiveIcon size={14} className="text-neutral-900" />
                   </div>
@@ -373,7 +373,7 @@ const Projects = () => {
                 </div>
               </div>
 
-              <div className="relative h-[320px] sm:h-[380px] md:h-[420px] lg:h-[460px] overflow-hidden bg-slate-50 dark:bg-[#0a0a0a]">
+              <div className="relative h-80 sm:h-95 md:h-105 lg:h-115 overflow-hidden bg-slate-50 dark:bg-[#0a0a0a]">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeProject.title}
@@ -444,8 +444,8 @@ const Projects = () => {
                 </motion.div>
               </AnimatePresence>
 
-              <div className="flex flex-col gap-3 md:min-w-[200px]">
-                <div className="rounded-lg border border-neutral-200/80 bg-gradient-to-br from-slate-50 to-white p-3 dark:border-white/10 dark:from-white/[0.02] dark:to-transparent">
+              <div className="flex flex-col gap-3 md:min-w-50">
+                <div className="rounded-lg border border-neutral-200/80 bg-linear-to-br from-slate-50 to-white p-3 dark:border-white/10 dark:from-white/2 dark:to-transparent">
                   <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-500">
                     Key Result
                   </p>
@@ -498,7 +498,7 @@ const Projects = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.2, delay: idx * 0.03 }}
-                  className="rounded-md border border-neutral-200/80 bg-white/50 px-3 py-1.5 text-xs font-medium text-neutral-700 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.04] dark:text-neutral-300"
+                  className="rounded-md border border-neutral-200/80 bg-white/50 px-3 py-1.5 text-xs font-medium text-neutral-700 backdrop-blur-sm dark:border-white/10 dark:bg-white/4 dark:text-neutral-300"
                 >
                   {item}
                 </motion.span>
@@ -506,7 +506,7 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="rounded-xl border border-neutral-200/80 bg-white/60 p-3 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.02]">
+          <div className="rounded-xl border border-neutral-200/80 bg-white/60 p-3 backdrop-blur-sm dark:border-white/10 dark:bg-white/2">
             <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
               {activeProject.details.map((detail, idx) => (
                 <motion.div
@@ -514,7 +514,7 @@ const Projects = () => {
                   initial={{ opacity: 0, x: -5 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.2, delay: idx * 0.05 }}
-                  className={`flex items-start gap-2 rounded-md border border-neutral-200/80 bg-white/50 px-3 py-2 text-sm leading-6 text-neutral-600 dark:border-white/10 dark:bg-white/[0.03] dark:text-neutral-300 ${
+                  className={`flex items-start gap-2 rounded-md border border-neutral-200/80 bg-white/50 px-3 py-2 text-sm leading-6 text-neutral-600 dark:border-white/10 dark:bg-white/3 dark:text-neutral-300 ${
                     idx === activeProject.details.length - 1 &&
                     activeProject.details.length % 2 === 1
                       ? "md:col-span-2 md:mx-auto md:w-1/2 xl:col-span-1 xl:mx-0 xl:w-auto"

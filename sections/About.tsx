@@ -135,18 +135,22 @@ const About = () => {
       className={`min-h-screen bg-slate-100 px-4 py-8 dark:bg-[#131313] dark:text-[#EDE1DF] sm:px-6 md:px-12 md:py-10 lg:px-20 ${spaceGrotesk.className}`}
       id="about"
     >
-      <h1 className={`text-4xl font-medium sm:text-5xl ${bebasNeue.className} `}>ABOUT</h1>
+      <h1
+        className={`text-4xl font-medium sm:text-5xl ${bebasNeue.className} `}
+      >
+        ABOUT
+      </h1>
       <div className="mt-6 flex flex-col justify-between gap-8 lg:flex-row lg:gap-10">
         <div className="w-full lg:max-w-[45%]">
           <p className="mt-4 text-sm leading-7 md:text-base">
             Hello! I&apos;m Samarth Chawla, a Full Stack Developer passionate
             about building scalable and high-performance web applications. I
             specialize in modern technologies like React, Next.js, and Node.js,
-            with a strong focus on clean code, performance, and user
-            experience. <br></br> <br></br>I have a solid foundation in Data
-            Structures & Algorithms, which helps me write optimized and
-            efficient solutions. I&apos;m committed to continuous learning,
-            solving real-world problems, and building impactful projects.
+            with a strong focus on clean code, performance, and user experience.{" "}
+            <br></br> <br></br>I have a solid foundation in Data Structures &
+            Algorithms, which helps me write optimized and efficient solutions.
+            I&apos;m committed to continuous learning, solving real-world
+            problems, and building impactful projects.
           </p>
           <ul className="mt-6 flex list-inside flex-col gap-3 pl-1 sm:pl-4 md:pl-8">
             <li>
@@ -166,8 +170,7 @@ const About = () => {
               <span className="font-medium">Language </span>: English, Hindi
             </li>
             <li>
-              <span className="font-medium">Focus </span>: Web Development +
-              DSA
+              <span className="font-medium">Focus </span>: Web Development + DSA
             </li>
           </ul>
         </div>
@@ -208,7 +211,7 @@ const About = () => {
             {[...topMarqueeSkills, ...topMarqueeSkills].map((skill, index) => (
               <span
                 key={`top-${skill.name}-${index}`}
-                className="inline-flex items-center gap-2 whitespace-nowrap rounded-md border border-neutral-300 dark:border-white/20 px-3 py-1 text-xs md:text-sm text-neutral-700 dark:text-neutral-200 bg-white/40 dark:bg-white/[0.03]"
+                className="inline-flex items-center gap-2 whitespace-nowrap rounded-md border border-neutral-300 dark:border-white/20 px-3 py-1 text-xs md:text-sm text-neutral-700 dark:text-neutral-200 bg-white/40 dark:bg-white/3"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -223,8 +226,8 @@ const About = () => {
               </span>
             ))}
           </div>
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-slate-100 via-slate-100/90 to-transparent dark:from-[#131313] dark:via-[#131313]/90" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-slate-100 via-slate-100/90 to-transparent dark:from-[#131313] dark:via-[#131313]/90" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-linear-to-r from-slate-100 via-slate-100/90 to-transparent dark:from-[#131313] dark:via-[#131313]/90" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-linear-to-l from-slate-100 via-slate-100/90 to-transparent dark:from-[#131313] dark:via-[#131313]/90" />
         </div>
 
         <div className="relative overflow-hidden rounded-lg border border-neutral-300/70 py-2 dark:border-white/15">
@@ -233,7 +236,7 @@ const About = () => {
               (skill, index) => (
                 <span
                   key={`bottom-${skill.name}-${index}`}
-                  className="inline-flex items-center gap-2 whitespace-nowrap rounded-md border border-neutral-300 dark:border-white/20 px-3 py-1 text-xs md:text-sm text-neutral-700 dark:text-neutral-200 bg-white/40 dark:bg-white/[0.03]"
+                  className="inline-flex items-center gap-2 whitespace-nowrap rounded-md border border-neutral-300 dark:border-white/20 px-3 py-1 text-xs md:text-sm text-neutral-700 dark:text-neutral-200 bg-white/40 dark:bg-white/3"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -249,8 +252,8 @@ const About = () => {
               ),
             )}
           </div>
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-slate-100 via-slate-100/90 to-transparent dark:from-[#131313] dark:via-[#131313]/90" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-slate-100 via-slate-100/90 to-transparent dark:from-[#131313] dark:via-[#131313]/90" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-linear-to-r from-slate-100 via-slate-100/90 to-transparent dark:from-[#131313] dark:via-[#131313]/90" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-linear-to-l from-slate-100 via-slate-100/90 to-transparent dark:from-[#131313] dark:via-[#131313]/90" />
         </div>
       </div>
     </div>

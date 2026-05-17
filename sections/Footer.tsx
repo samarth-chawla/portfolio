@@ -21,8 +21,7 @@ const Footer = () => {
             </span>
           </p>
           <p className="text-sm text-neutral-500 dark:text-neutral-500">
-            © {new Date().getFullYear()} Samarth Chawla. All rights
-            reserved.
+            © {new Date().getFullYear()} Samarth Chawla. All rights reserved.
           </p>
         </div>
 
@@ -31,22 +30,11 @@ const Footer = () => {
             href="https://github.com/samarth-chawla/portfolio"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white/70 px-4 text-sm font-medium text-neutral-800 transition hover:-translate-y-0.5 hover:border-neutral-950 hover:bg-white dark:border-white/10 dark:bg-white/[0.04] dark:text-neutral-200 dark:hover:border-white/30 dark:hover:bg-white/[0.08] sm:w-fit"
+            className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white/70 px-4 text-sm font-medium text-neutral-800 transition hover:-translate-y-0.5 hover:border-neutral-950 hover:bg-white dark:border-white/10 dark:bg-white/4 dark:text-neutral-200 dark:hover:border-white/30 dark:hover:bg-white/8 sm:w-fit"
             aria-label="View this portfolio project repository on GitHub"
           >
             <GitHub size={16} />
             View Repository
-          </a>
-
-          <a
-            href="https://x.com/_samarth_chawla"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white/70 px-4 text-sm font-medium text-neutral-800 transition hover:-translate-y-0.5 hover:border-neutral-950 hover:bg-white dark:border-white/10 dark:bg-white/[0.04] dark:text-neutral-200 dark:hover:border-white/30 dark:hover:bg-white/[0.08] sm:w-fit"
-            aria-label="Connect with Samarth Chawla on X"
-          >
-            <X size={16} />
-            Connect on X
           </a>
         </div>
       </div>

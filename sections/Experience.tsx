@@ -88,12 +88,12 @@ const Experience = () => {
 
         <div className="relative flex-1 pl-0 xl:pl-20">
           <div
-            className={`hidden xl:block absolute ${RAIL_LEFT} bottom-7 top-7 w-[2px] -translate-x-1/2 bg-neutral-300 dark:bg-white/15`}
+            className={`hidden xl:block absolute ${RAIL_LEFT} bottom-7 top-7 w-0.5 -translate-x-1/2 bg-neutral-300 dark:bg-white/15`}
           />
 
           <motion.div
             style={{ scaleY: scrollYProgress }}
-            className={`hidden xl:block absolute ${RAIL_LEFT} bottom-7 top-7 w-[2px] -translate-x-1/2 origin-top bg-emerald-500`}
+            className={`hidden xl:block absolute ${RAIL_LEFT} bottom-7 top-7 w-0.5 -translate-x-1/2 origin-top bg-emerald-500`}
           />
 
           <div className="grid gap-4 xl:h-full xl:grid-rows-2">
@@ -110,7 +110,7 @@ const Experience = () => {
                   )}
                 </div>
 
-                <div className="flex flex-col rounded-lg border border-neutral-300/90 bg-white/70 p-4 shadow-sm transition-all hover:shadow-md dark:border-white/15 dark:bg-white/[0.04] sm:p-5 xl:h-full">
+                <div className="flex flex-col rounded-lg border border-neutral-300/90 bg-white/70 p-4 shadow-sm transition-all hover:shadow-md dark:border-white/15 dark:bg-white/4 sm:p-5 xl:h-full">
                   <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
                     <div>
                       <h3 className="text-lg font-semibold md:text-xl">

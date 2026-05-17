@@ -63,7 +63,10 @@ const contactLinks = [
 
 const terminalLines = [
   { prompt: "samarth@portfolio", command: "npm run connect" },
-  { prompt: "status", command: "available for internships and freelance builds" },
+  {
+    prompt: "status",
+    command: "available for internships and freelance builds",
+  },
   { prompt: "focus", command: "full-stack apps, dashboards, clean UI systems" },
   { prompt: "response", command: "usually within 24 hours" },
 ];
@@ -165,16 +168,15 @@ const Contact = () => {
             </h1>
           </div>
           <p className="max-w-2xl text-sm leading-7 text-neutral-700 dark:text-neutral-300 md:ml-auto md:text-base">
-            Have a product idea, internship opportunity, collaboration, or a
-            bug that needs a calm debugger? Send the signal and I will pick it
-            up.
+            Have a product idea, internship opportunity, collaboration, or a bug
+            that needs a calm debugger? Send the signal and I will pick it up.
           </p>
         </motion.header>
 
         <div className="grid gap-5 lg:min-h-0 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <motion.div variants={itemVariants} className="grid gap-3">
             <div className="overflow-hidden rounded-xl border border-neutral-300/80 bg-neutral-950 text-neutral-100 shadow-xl shadow-black/10 dark:border-white/10">
-              <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-3">
+              <div className="flex items-center gap-2 border-b border-white/10 bg-white/4 px-4 py-3">
                 <span className="h-3 w-3 rounded-full bg-red-400" />
                 <span className="h-3 w-3 rounded-full bg-amber-400" />
                 <span className="h-3 w-3 rounded-full bg-emerald-400" />
@@ -188,7 +190,7 @@ const Contact = () => {
                 {terminalLines.map((line) => (
                   <div
                     key={`${line.prompt}-${line.command}`}
-                    className="break-words"
+                    className="wrap-break-word"
                   >
                     <span className="text-emerald-300">{line.prompt}</span>
                     <span className="text-neutral-500"> $ </span>
@@ -203,21 +205,21 @@ const Contact = () => {
             </div>
 
             <div className="grid gap-3 sm:grid-cols-3">
-              <div className="rounded-lg border border-neutral-300/80 bg-white/70 p-4 dark:border-white/10 dark:bg-white/[0.04]">
+              <div className="rounded-lg border border-neutral-300/80 bg-white/70 p-4 dark:border-white/10 dark:bg-white/4">
                 <CalendarClock className="mb-3 h-5 w-5 text-emerald-500" />
                 <p className="text-sm font-semibold">Availability</p>
                 <p className="mt-1 text-xs leading-5 text-neutral-600 dark:text-neutral-400">
                   Open to meaningful work and project discussions.
                 </p>
               </div>
-              <div className="rounded-lg border border-neutral-300/80 bg-white/70 p-4 dark:border-white/10 dark:bg-white/[0.04]">
+              <div className="rounded-lg border border-neutral-300/80 bg-white/70 p-4 dark:border-white/10 dark:bg-white/4">
                 <MapPin className="mb-3 h-5 w-5 text-sky-500" />
                 <p className="text-sm font-semibold">Location</p>
                 <p className="mt-1 text-xs leading-5 text-neutral-600 dark:text-neutral-400">
                   New Delhi, India. Remote-friendly.
                 </p>
               </div>
-              <div className="rounded-lg border border-neutral-300/80 bg-white/70 p-4 dark:border-white/10 dark:bg-white/[0.04]">
+              <div className="rounded-lg border border-neutral-300/80 bg-white/70 p-4 dark:border-white/10 dark:bg-white/4">
                 <MessageSquareText className="mb-3 h-5 w-5 text-violet-500" />
                 <p className="text-sm font-semibold">Best For</p>
                 <p className="mt-1 text-xs leading-5 text-neutral-600 dark:text-neutral-400">
@@ -239,7 +241,7 @@ const Contact = () => {
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className="group flex min-w-0 items-center justify-center gap-2 rounded-lg border border-neutral-300/80 bg-white/70 px-2 py-3 transition-all hover:-translate-y-0.5 hover:border-neutral-900 hover:bg-white hover:shadow-md dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-white/30 dark:hover:bg-white/[0.07] min-[390px]:px-3 sm:justify-between"
+                    className="group flex min-w-0 items-center justify-center gap-2 rounded-lg border border-neutral-300/80 bg-white/70 px-2 py-3 transition-all hover:-translate-y-0.5 hover:border-neutral-900 hover:bg-white hover:shadow-md dark:border-white/10 dark:bg-white/4 dark:hover:border-white/30 dark:hover:bg-white/7 min-[390px]:px-3 sm:justify-between"
                   >
                     <span className="flex min-w-0 items-center gap-2">
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-neutral-950 text-white dark:bg-white dark:text-neutral-950">
@@ -266,7 +268,7 @@ const Contact = () => {
 
           <motion.div
             variants={itemVariants}
-            className="rounded-xl border border-neutral-300/80 bg-white/80 p-4 shadow-sm backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.04] sm:p-5"
+            className="rounded-xl border border-neutral-300/80 bg-white/80 p-4 shadow-sm backdrop-blur-sm dark:border-white/10 dark:bg-white/4 sm:p-5"
           >
             <div className="mb-4 flex items-start justify-between gap-4">
               <div>
@@ -282,10 +284,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <form
-              onSubmit={handleSubmit}
-              className="grid gap-3.5"
-            >
+            <form onSubmit={handleSubmit} className="grid gap-3.5">
               <label className="hidden">
                 Website
                 <input
@@ -327,7 +326,11 @@ const Contact = () => {
                   required
                   className="h-12 rounded-lg border border-neutral-300 bg-white px-4 text-sm font-normal text-neutral-950 outline-none transition focus:border-neutral-900 focus:ring-2 focus:ring-neutral-900/10 dark:border-white/10 dark:bg-black/20 dark:text-neutral-100 dark:focus:border-white"
                 >
-                  <option className="bg-white text-neutral-950" value="" disabled>
+                  <option
+                    className="bg-white text-neutral-950"
+                    value=""
+                    disabled
+                  >
                     Choose a subject
                   </option>
                   <option className="bg-white text-neutral-950">
@@ -365,7 +368,6 @@ const Contact = () => {
                 {formState === "loading" ? "Sending..." : "Send Message"}
                 <Send size={16} />
               </button>
-
             </form>
           </motion.div>
         </div>
@@ -381,7 +383,7 @@ const Contact = () => {
             transition={{ duration: 0.2, ease: "easeOut" }}
             role={toast.type === "error" ? "alert" : "status"}
             aria-live={toast.type === "error" ? "assertive" : "polite"}
-            className={`fixed bottom-5 left-4 right-4 z-[80] mx-auto max-w-sm rounded-lg border px-4 py-3 text-sm shadow-xl backdrop-blur-xl sm:left-auto sm:right-6 sm:mx-0 ${
+            className={`fixed bottom-5 left-4 right-4 z-80 mx-auto max-w-sm rounded-lg border px-4 py-3 text-sm shadow-xl backdrop-blur-xl sm:left-auto sm:right-6 sm:mx-0 ${
               toast.type === "success"
                 ? "border-emerald-500/30 bg-emerald-50 text-emerald-900 dark:bg-emerald-500/15 dark:text-emerald-100"
                 : "border-red-500/30 bg-red-50 text-red-900 dark:bg-red-500/15 dark:text-red-100"

@@ -81,7 +81,7 @@ const Hero = () => {
       <Navbar />
 
       {/* MAIN HERO */}
-      <div className="relative z-10 flex min-h-screen w-full flex-col items-center justify-start gap-3 px-4 pb-16 pt-20 sm:px-6 md:pb-14 md:pt-[4.5rem] lg:px-20 lg:justify-center lg:pb-10 lg:pt-20">
+      <div className="relative z-10 flex min-h-screen w-full flex-col items-center justify-start gap-3 px-4 pb-16 pt-20 sm:px-6 md:pb-14 md:pt-18 lg:px-20 lg:justify-center lg:pb-10 lg:pt-20">
         <div className="flex w-full max-w-7xl flex-col items-center justify-between gap-8 lg:flex-row lg:items-center lg:gap-12">
           {/* LEFT SIDE - Content */}
           <motion.div
@@ -176,11 +176,13 @@ const Hero = () => {
               </a>
 
               <a
-                href="mailto:mr.samarthchawla@gmail.com"
+                href="https://x.com/_samarth_chawla"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative flex w-fit items-center gap-2 overflow-hidden rounded-full border border-neutral-300 bg-white/50 px-5 py-2.5 text-sm font-medium text-neutral-700 backdrop-blur-sm transition-all hover:scale-105 hover:shadow-xl dark:border-white/20 dark:bg-black/30 dark:text-neutral-300 sm:px-7 sm:py-3 sm:text-base"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  Contact Me
+                  Connect on X
                 </span>
               </a>
             </motion.div>

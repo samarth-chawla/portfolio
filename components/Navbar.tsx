@@ -93,7 +93,12 @@ const navLinks = [
   { id: "home", href: "#home", label: "Home", type: "section" },
   { id: "about", href: "#about", label: "About", type: "section" },
   { id: "projects", href: "#projects", label: "Projects", type: "section" },
-  { id: "experience", href: "#experience", label: "Experience", type: "section" },
+  {
+    id: "experience",
+    href: "#experience",
+    label: "Experience",
+    type: "section",
+  },
   { id: "contact", href: "#contact", label: "Contact", type: "section" },
 ] as const;
 
@@ -180,21 +185,22 @@ const Navbar = () => {
 
   const actionItems = [
     {
-      label: isDark ? "Light mode" : "Dark mode",
-      ariaLabel: "Toggle color theme",
-      onClick: handleThemeToggle,
-    },
-    {
       label: loading ? "Downloading..." : "View resume",
-      ariaLabel: "Download resume",
-      onClick: handleDownload,
+      ariaLabel: "View resume",
+      onClick: () =>
+        window.open(
+          "https://drive.google.com/file/d/1GeiGXEhV4rA3VFKw-JVDhuwCYuV-YYla/view?usp=sharing",
+          "_blank",
+          "noopener noreferrer",
+        ),
+      disabled: loading,
     },
   ];
 
   return (
     <>
       <div className="fixed left-0 top-0 z-50 h-16 w-full lg:hidden">
-        <div className="pointer-events-auto absolute right-[4.75rem] top-3 z-[60] flex items-center gap-2 rounded-full border border-black/10 bg-white/55 p-1 shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-black/35">
+        <div className="pointer-events-auto absolute right-19 top-3 z-60 flex items-center gap-2 rounded-full border border-black/10 bg-white/55 p-1 shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-black/35">
           <button
             type="button"
             onClick={handleThemeToggle}
@@ -204,15 +210,26 @@ const Navbar = () => {
             {isDark ? <Sun size={17} /> : <Moon size={17} />}
           </button>
 
-          <button
+          {/* <button
             type="button"
             onClick={handleDownload}
             disabled={loading}
             className="inline-flex h-9 w-9 items-center justify-center rounded-full text-neutral-900 transition hover:bg-white/70 disabled:opacity-60 dark:text-white dark:hover:bg-white/10"
             aria-label="View resume"
+          > */}
+          <a
+            href="https://drive.google.com/file/d/1GeiGXEhV4rA3VFKw-JVDhuwCYuV-YYla/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Eye size={17} />
-          </button>
+            <button
+              disabled={loading}
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full text-neutral-900 transition hover:bg-white/70 disabled:opacity-60 dark:text-white dark:hover:bg-white/10"
+              aria-label="View resume"
+            >
+              <Eye size={17} />
+            </button>
+          </a>
         </div>
 
         <StaggeredMenu
@@ -231,101 +248,118 @@ const Navbar = () => {
         />
       </div>
 
-    <nav
-      className={`fixed left-0 z-50 hidden w-full text-neutral-900 transition-[top,padding] duration-500 ease-out dark:text-[#EDE1DF] lg:flex ${
-        isScrolled ? "top-3 justify-center px-4" : "top-0 justify-center px-0"
-      }`}
-    >
-      <div
-        className={`relative flex w-full transition-[max-width] duration-500 ease-out ${
-          isScrolled ? "max-w-fit justify-center" : "max-w-none justify-center"
+      <nav
+        className={`fixed left-0 z-50 hidden w-full text-neutral-900 transition-[top,padding] duration-500 ease-out dark:text-[#EDE1DF] lg:flex ${
+          isScrolled ? "top-3 justify-center px-4" : "top-0 justify-center px-0"
         }`}
       >
         <div
-          className={`flex w-full items-center transition-all duration-500 ease-out ${
+          className={`relative flex w-full transition-[max-width] duration-500 ease-out ${
             isScrolled
-              ? "justify-center rounded-full border border-black/10 bg-white/75 px-5 py-2.5 shadow-lg shadow-black/5 backdrop-blur-xl dark:border-white/10 dark:bg-[#131313]/80 dark:shadow-black/25"
-              : "justify-between border-b border-black/5 bg-slate-100 px-4 py-2.5 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-[#131313] sm:px-6 lg:px-8"
+              ? "max-w-fit justify-center"
+              : "max-w-none justify-center"
           }`}
         >
           <div
-            className={` flex items-center justify-start overflow-hidden transition-all duration-500 ease-out ${
-              isScrolled ? "w-0 -translate-x-3 opacity-0" : "w-[170px] translate-x-0 opacity-100"
+            className={`flex w-full items-center transition-all duration-500 ease-out ${
+              isScrolled
+                ? "justify-center rounded-full border border-black/10 bg-white/75 px-5 py-2.5 shadow-lg shadow-black/5 backdrop-blur-xl dark:border-white/10 dark:bg-[#131313]/80 dark:shadow-black/25"
+                : "justify-between border-b border-black/5 bg-slate-100 px-4 py-2.5 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-[#131313] sm:px-6 lg:px-8"
             }`}
           >
-            <Image
-              src={logo}
-              alt="Logo"
-              width={32}
-              height={32}
-              className="mr-2 bg-transparent sm:h-9 sm:w-9"
-            />
-            <span className={`text-base font-bold leading-tight sm:text-lg ${bebasNeue.className}`}>
-              SAMARTH <br /> CHAWLA
-            </span>
-          </div>
-
-          <div
-            className={`hidden items-center gap-6 transition-all duration-500 ease-out lg:flex ${spaceGrotesk.className}`}
-          >
-            {navLinks.map((link) => (
-              link.type === "section" ? (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={getNavLinkClass(activeSection === link.id)}
-                  onClick={() => setActiveSection(link.id)}
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className={getNavLinkClass(false)}
-                >
-                  {link.label}
-                </a>
-              )
-            ))}
-          </div>
-
-          <div
-            className={`items-center justify-end gap-3 overflow-hidden transition-all duration-500 ease-out ${
-              isScrolled ? "w-0 translate-x-3 opacity-0 lg:flex" : "hidden w-[170px] translate-x-0 opacity-100 lg:flex"
-            }`}
-          >
-            <ThemeSwitch
-              checked={isDark}
-              onChange={handleThemeToggle}
-              className="hidden scale-90 lg:inline-flex"
-              inputProps={{ "aria-label": "Toggle color theme" }}
-            />
-
-            <Tooltip title="Download Resume" sx={{ borderRadius: "10px" }}>
-              <Button
-                onClick={handleDownload}
-                disabled={loading}
-                variant="contained"
-                size="small"
-                className="gap-2 whitespace-nowrap text-xs"
+            <div
+              className={` flex items-center justify-start overflow-hidden transition-all duration-500 ease-out ${
+                isScrolled
+                  ? "w-0 -translate-x-3 opacity-0"
+                  : "w-42.5 translate-x-0 opacity-100"
+              }`}
+            >
+              <Image
+                src={logo}
+                alt="Logo"
+                width={32}
+                height={32}
+                className="mr-2 bg-transparent sm:h-9 sm:w-9"
+              />
+              <span
+                className={`text-base font-bold leading-tight sm:text-lg ${bebasNeue.className}`}
               >
-                {loading ? (
-                  <CircularProgress size={20} color="primary" />
-                ) : (
-                  <>
-                    <DownloadCloudIcon style={{ marginLeft: 0 }} size={16} />
-                    <span className="hidden sm:inline">Resume</span>
-                    <span className="sr-only sm:hidden">Download Resume</span>
-                  </>
-                )}
-              </Button>
-            </Tooltip>
-          </div>
+                SAMARTH <br /> CHAWLA
+              </span>
+            </div>
 
+            <div
+              className={`hidden items-center gap-6 transition-all duration-500 ease-out lg:flex ${spaceGrotesk.className}`}
+            >
+              {navLinks.map((link) =>
+                link.type === "section" ? (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={getNavLinkClass(activeSection === link.id)}
+                    onClick={() => setActiveSection(link.id)}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className={getNavLinkClass(false)}
+                  >
+                    {link.label}
+                  </a>
+                ),
+              )}
+            </div>
+
+            <div
+              className={`items-center justify-end gap-3 overflow-hidden transition-all duration-500 ease-out ${
+                isScrolled
+                  ? "w-0 translate-x-3 opacity-0 lg:flex"
+                  : "hidden w-42.5 translate-x-0 opacity-100 lg:flex"
+              }`}
+            >
+              <ThemeSwitch
+                checked={isDark}
+                onChange={handleThemeToggle}
+                className="hidden scale-90 lg:inline-flex"
+                inputProps={{ "aria-label": "Toggle color theme" }}
+              />
+
+              <Tooltip title="View Resume" sx={{ borderRadius: "10px" }}>
+                <a
+                  href="https://drive.google.com/file/d/1GeiGXEhV4rA3VFKw-JVDhuwCYuV-YYla/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    disabled={loading}
+                    variant="contained"
+                    size="small"
+                    className="gap-2 whitespace-nowrap text-xs"
+                  >
+                    {loading ? (
+                      <CircularProgress size={20} color="primary" />
+                    ) : (
+                      <>
+                        <Eye
+                          style={{ marginLeft: 0 }}
+                          size={16}
+                        />
+                        <span className="hidden sm:inline">Resume</span>
+                        <span className="sr-only sm:hidden">
+                          View Resume
+                        </span>
+                      </>
+                    )}
+                  </Button>
+                </a>
+              </Tooltip>
+            </div>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
     </>
   );
 };
