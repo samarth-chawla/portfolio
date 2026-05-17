@@ -84,7 +84,37 @@
 
 body {
   font-family: var(--font-geist-sans), sans-serif;
-  cursor: url("/cursor.png"), auto;
+  cursor: auto;
+  min-height: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+}
+
+@keyframes marquee-x {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0.5rem;
+  will-change: transform;
+  animation: marquee-x 24s linear infinite;
+}
+
+.marquee-reverse {
+  animation-direction: reverse;
+  animation-delay: -12s;
 }
 
 :root {
@@ -131,5 +161,13 @@ body {
   }
   html {
     @apply font-sans;
+    height: 100%;
+    position: relative;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  [id] {
+    scroll-margin-top: 5rem;
   }
 }
