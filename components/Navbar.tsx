@@ -189,7 +189,7 @@ const Navbar = () => {
       ariaLabel: "View resume",
       onClick: () =>
         window.open(
-          "https://drive.google.com/file/d/1GeiGXEhV4rA3VFKw-JVDhuwCYuV-YYla/view?usp=sharing",
+          "https://drive.google.com/file/d/1NjM2HnZGxLcH1MsOdC0kHK5olflzS_mX/view?usp=sharing",
           "_blank",
           "noopener noreferrer",
         ),
@@ -218,7 +218,7 @@ const Navbar = () => {
             aria-label="View resume"
           > */}
           <a
-            href="https://drive.google.com/file/d/1GeiGXEhV4rA3VFKw-JVDhuwCYuV-YYla/view?usp=sharing"
+            href="https://drive.google.com/file/d/1NjM2HnZGxLcH1MsOdC0kHK5olflzS_mX/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
