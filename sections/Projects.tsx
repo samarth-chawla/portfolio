@@ -11,6 +11,7 @@ import {
   MapPinned,
   Rocket,
   ExternalLink,
+  BrainCircuit
 } from "lucide-react";
 import { Space_Grotesk, Bebas_Neue } from "next/font/google";
 
@@ -113,6 +114,30 @@ const projects: ProjectItem[] = [
       "Built dynamic route plotting with React Leaflet and interactive maps.",
       "Added heatmap overlays and safety insights for route comparison.",
       "Powered backend data flows with Node.js, Express, and external APIs.",
+    ],
+  },
+  {
+    title: "DSA Intelligence",
+    eyebrow: "Personalized LeetCode practice",
+    year: "2026",
+    summary:
+      "A full-stack DSA prep platform that analyzes LeetCode submission history to detect topic-level weaknesses and generate personalized daily practice plans.",
+    impact:
+      "Turned raw LeetCode history into recency-weighted weakness scores across major DSA topics, driving a daily 3-problem practice plan tailored to each user.",
+    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
+    accent: "from-violet-300 via-purple-300 to-fuchsia-300",
+    icon: BrainCircuit,
+    status: "Live Project",
+    href: "https://leetcode-analyzer.samarthworks.in/",
+    githubUrl: "https://github.com/samarth-chawla/dsa-intelligence",
+    previewUrl: "https://leetcode-analyzer.samarthworks.in/",
+    metric: "Weakness-scored practice plans",
+    role: "Full stack + AI integration",
+    result: "Personalized daily prep",
+    details: [
+      "Built username-based LeetCode import via GraphQL to pull real submission history.",
+      "Designed recency-weighted weakness scoring across major DSA topics.",
+      "Built an AI Mentor feature grounded in the user's actual performance data, with streak tracking and daily plan sync.",
     ],
   },
 ];
