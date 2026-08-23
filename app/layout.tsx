@@ -24,6 +24,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.samarthworks.in"),
+
   title: "Samarth Chawla - Portfolio",
 
   description:
@@ -37,34 +39,19 @@ export const metadata: Metadata = {
     "Web Developer Portfolio",
   ],
 
-    icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
-      { url: "/favicon.ico", sizes: "192x192", type: "image/x-icon" },
-      { url: "/favicon.ico", sizes: "512x512", type: "image/x-icon" },
-    ],
-
-    apple: [
-      { url: "/favicon.ico", sizes: "180x180", type: "image/x-icon" },
-    ],
-
-    shortcut: ["/favicon.ico"],
-  },
-
-
   openGraph: {
     title: "Samarth Chawla - Portfolio",
 
     description:
       "Full-Stack Developer building scalable web applications, API-driven systems & modern digital experiences.",
 
-    url: "https://www.samarthworks.in",
+    url: "/",
 
     siteName: "Samarth Chawla",
 
     images: [
       {
-        url: "https://www.samarthworks.in/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Samarth Chawla Portfolio",
@@ -83,7 +70,7 @@ export const metadata: Metadata = {
     description:
       "Full-Stack Developer building scalable web applications, API-driven systems & modern digital experiences.",
 
-    images: ["https://www.samarthworks.in/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 

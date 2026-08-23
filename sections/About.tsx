@@ -36,7 +36,7 @@ export const techStack = {
       "Middleware",
       "MongoDB",
       "PostgreSQL",
-      "SQLLite",
+      "SQLite",
     ],
   },
 

@@ -222,8 +222,8 @@ const Hero = () => {
 
               {/* Tilted Card */}
               <TiltedCard
-                imageSrc="/profile.png"
-                altText="Portfolio Preview"
+                imageSrc="/profile.webp"
+                altText="Portrait of Samarth Chawla"
                 containerHeight="clamp(280px, 76vw, 500px)"
                 containerWidth="min(100%, 500px)"
                 imageHeight="clamp(240px, 65vw, 420px)"
@@ -236,7 +236,7 @@ const Hero = () => {
                 overlayContent={
                   <div className="relative h-full w-full">
                     {/* Top Badge */}
-                    <div className="absolute md:left-4 left-7 top-[-20] z-20 rounded-full border border-black/10 bg-white/40 px-3 py-1.5 shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-black/40 sm:left-4 sm:top-4">
+                    <div className="absolute md:left-4 left-7 top-[-20px] z-20 rounded-full border border-black/10 bg-white/40 px-3 py-1.5 shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-black/40 sm:left-4 sm:top-4">
                       <p className="text-[11px] font-medium text-neutral-800 dark:text-white sm:text-xs">
                         Full Stack Developer
                       </p>

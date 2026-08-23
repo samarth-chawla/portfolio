@@ -1,7 +1,5 @@
-"use client";
-
 import { Space_Grotesk } from "next/font/google";
-import { GitHub, X } from "@deemlol/next-icons";
+import { GitHub } from "@deemlol/next-icons";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],

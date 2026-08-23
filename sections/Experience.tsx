@@ -72,9 +72,9 @@ const Experience = () => {
     <section
       ref={sectionRef}
       id="experience"
-      className={`relative min-h-screen bg-slate-100 px-4 py-14 dark:bg-[#131313] dark:text-[#EDE1DF] sm:px-6 md:px-10 lg:px-16 xl:h-screen xl:overflow-hidden xl:px-20 xl:py-8 ${spaceGrotesk.className}`}
+      className={`relative min-h-screen bg-slate-100 px-4 py-14 dark:bg-[#131313] dark:text-[#EDE1DF] sm:px-6 md:px-10 lg:px-16 xl:min-h-screen xl:px-20 xl:py-8 ${spaceGrotesk.className}`}
     >
-      <div className="relative mx-auto flex w-full max-w-7xl flex-col xl:h-[calc(100vh-4rem)] xl:min-h-0">
+      <div className="relative mx-auto flex w-full max-w-7xl flex-col xl:min-h-[calc(100vh-4rem)]">
         <header className="mb-6 shrink-0 lg:mb-5">
           <p className="text-xs uppercase tracking-[0.34em] text-neutral-500 dark:text-neutral-400">
             Professional Work
@@ -86,7 +86,7 @@ const Experience = () => {
           </h1>
         </header>
 
-        <div className="relative flex-1 pl-0 xl:pl-20">
+        <div className="relative flex-1 pl-0 xl:flex xl:flex-col xl:pl-20">
           <div
             className={`hidden xl:block absolute ${RAIL_LEFT} bottom-7 top-7 w-0.5 -translate-x-1/2 bg-neutral-300 dark:bg-white/15`}
           />
@@ -96,11 +96,11 @@ const Experience = () => {
             className={`hidden xl:block absolute ${RAIL_LEFT} bottom-7 top-7 w-0.5 -translate-x-1/2 origin-top bg-emerald-500`}
           />
 
-          <div className="grid gap-4 xl:h-full xl:grid-rows-2">
+          <div className="grid flex-1 gap-4 xl:grid-rows-2">
             {experiences.map((item, index) => (
               <article
                 key={`${item.company}-${item.role}`}
-                className="relative"
+                className="relative flex flex-col"
               >
                 <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 bg-slate-100 text-neutral-700 shadow-sm dark:border-white/20 dark:bg-[#131313] dark:text-neutral-100 xl:absolute xl:-left-12 xl:top-7 xl:z-10 xl:mb-0 xl:-translate-x-1/2 xl:-translate-y-1/2">
                   {index === 0 ? (
@@ -110,7 +110,7 @@ const Experience = () => {
                   )}
                 </div>
 
-                <div className="flex flex-col rounded-lg border border-neutral-300/90 bg-white/70 p-4 shadow-sm transition-all hover:shadow-md dark:border-white/15 dark:bg-white/4 sm:p-5 xl:h-full">
+                <div className="flex flex-1 flex-col rounded-lg border border-neutral-300/90 bg-white/70 p-4 shadow-sm transition-all hover:shadow-md dark:border-white/15 dark:bg-white/4 sm:p-5">
                   <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
                     <div>
                       <h3 className="text-lg font-semibold md:text-xl">

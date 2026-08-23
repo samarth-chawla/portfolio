@@ -32,7 +32,7 @@ export const StaggeredMenu = ({
   displaySocials = true,
   displayItemNumbering = true,
   className,
-  logoUrl = '/src/assets/logos/reactbits-gh-white.svg',
+  logoUrl = '/logo.webp',
   menuButtonColor = '#fff',
   openMenuButtonColor = '#fff',
   accentColor = '#5227FF',
@@ -453,7 +453,7 @@ export const StaggeredMenu = ({
         <div className="sm-logo" aria-label="Logo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={logoUrl || '/src/assets/logos/reactbits-gh-white.svg'}
+            src={logoUrl || '/logo.webp'}
             alt="Logo"
             className="sm-logo-img"
             draggable={false}

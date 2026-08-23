@@ -453,15 +453,18 @@
 .sm-panel-list[data-numbering] .sm-panel-item::after {
   counter-increment: smItem;
   content: counter(smItem, decimal-leading-zero);
-  position: absolute;
-  top: 0.1em;
-  right: 2.8em;
-  font-size: 18px;
+  position: relative;
+  display: inline-block;
+  margin-left: 0.5em;
+  vertical-align: top;
+  transform: translateY(0.12em);
+  font-size: 1rem;
   font-weight: 400;
   color: var(--sm-accent, #5227ff);
   letter-spacing: 0;
   pointer-events: none;
   user-select: none;
+  white-space: nowrap;
   opacity: var(--sm-num-opacity, 0);
 }
 
@@ -514,13 +517,12 @@
   }
 
   .sm-panel-item {
-    font-size: clamp(2rem, 12vw, 3.5rem);
+    font-size: clamp(1.5rem, 7.5vw, 2.25rem);
     letter-spacing: -1px;
     padding-right: 1.1em;
   }
 
   .sm-panel-list[data-numbering] .sm-panel-item::after {
-    right: 1.35em;
     font-size: 0.85rem;
   }
 
@@ -537,7 +539,7 @@
   }
 }
 
-@media (max-height: 640px) {
+@media (max-height: 640px) and (min-width: 641px) {
   .staggered-menu-panel {
     padding-top: 4.75rem;
   }
@@ -548,6 +550,10 @@
 
   .sm-panel-item {
     font-size: clamp(1.85rem, 10vh, 3rem);
+  }
+
+  .sm-panel-list[data-numbering] .sm-panel-item::after {
+    font-size: 0.85rem;
   }
 
   .sm-socials {

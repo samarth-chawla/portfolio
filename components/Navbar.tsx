@@ -3,14 +3,14 @@ import { Bebas_Neue, Space_Grotesk } from "next/font/google";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { DownloadCloudIcon, Eye, Moon, Sun } from "lucide-react";
-import logo from "../public/logo.png";
+import { Eye, Moon, Sun } from "lucide-react";
+import logo from "../public/logo.webp";
 import StaggeredMenu from "@/components/StaggeredMenu.jsx";
 import { useTheme } from "next-themes";
 import Tooltip from "@mui/material/Tooltip";
 import Button from "@mui/material/Button";
-import CircularProgress from "@mui/material/CircularProgress";
 import Switch from "@mui/material/Switch";
+;
 import { styled } from "@mui/material/styles";
 
 const bebasNeue = Bebas_Neue({
@@ -104,7 +104,6 @@ const navLinks = [
 
 const Navbar = () => {
   const [mounted, setMounted] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
@@ -152,17 +151,6 @@ const Navbar = () => {
         : "after:scale-x-0"
     }`;
 
-  const handleDownload = () => {
-    setLoading(true);
-
-    const link = document.createElement("a");
-    link.href = "/SAMARTH_CHAWLA_RESUME.pdf";
-    link.download = "SAMARTH_CHAWLA_RESUME.pdf";
-    link.click();
-
-    setTimeout(() => setLoading(false), 1000);
-  };
-
   const handleThemeToggle = () => {
     setTheme(isDark ? "light" : "dark");
   };
@@ -185,7 +173,7 @@ const Navbar = () => {
 
   const actionItems = [
     {
-      label: loading ? "Downloading..." : "View resume",
+      label: "View resume",
       ariaLabel: "View resume",
       onClick: () =>
         window.open(
@@ -193,7 +181,6 @@ const Navbar = () => {
           "_blank",
           "noopener noreferrer",
         ),
-      disabled: loading,
     },
   ];
 
@@ -210,32 +197,21 @@ const Navbar = () => {
             {isDark ? <Sun size={17} /> : <Moon size={17} />}
           </button>
 
-          {/* <button
-            type="button"
-            onClick={handleDownload}
-            disabled={loading}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-neutral-900 transition hover:bg-white/70 disabled:opacity-60 dark:text-white dark:hover:bg-white/10"
-            aria-label="View resume"
-          > */}
           <a
             href="https://drive.google.com/file/d/1UpcCv0KjWrcWXjHYm6KJbOfqj2HYQsBT/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-neutral-900 transition hover:bg-white/70 dark:text-white dark:hover:bg-white/10"
+            aria-label="View resume"
           >
-            <button
-              disabled={loading}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full text-neutral-900 transition hover:bg-white/70 disabled:opacity-60 dark:text-white dark:hover:bg-white/10"
-              aria-label="View resume"
-            >
-              <Eye size={17} />
-            </button>
+            <Eye size={17} />
           </a>
         </div>
 
         <StaggeredMenu
           isFixed
           position="right"
-          logoUrl="/logo.png"
+          logoUrl="/logo.webp"
           items={menuItems}
           socialItems={socialItems}
           actionItems={actionItems}
@@ -324,7 +300,7 @@ const Navbar = () => {
                 checked={isDark}
                 onChange={handleThemeToggle}
                 className="hidden scale-90 lg:inline-flex"
-                inputProps={{ "aria-label": "Toggle color theme" }}
+                slotProps={{ input: { "aria-label": "Toggle color theme" } }}
               />
 
               <Tooltip title="View Resume" sx={{ borderRadius: "10px" }}>
@@ -334,25 +310,13 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                 >
                   <Button
-                    disabled={loading}
                     variant="contained"
                     size="small"
                     className="gap-2 whitespace-nowrap text-xs"
                   >
-                    {loading ? (
-                      <CircularProgress size={20} color="primary" />
-                    ) : (
-                      <>
-                        <Eye
-                          style={{ marginLeft: 0 }}
-                          size={16}
-                        />
-                        <span className="hidden sm:inline">Resume</span>
-                        <span className="sr-only sm:hidden">
-                          View Resume
-                        </span>
-                      </>
-                    )}
+                    <Eye style={{ marginLeft: 0 }} size={16} />
+                    <span className="hidden sm:inline">Resume</span>
+                    <span className="sr-only sm:hidden">View Resume</span>
                   </Button>
                 </a>
               </Tooltip>
