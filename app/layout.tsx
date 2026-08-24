@@ -52,6 +52,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.jpg",
+        secureUrl: "/og-image.jpg",
+        type: "image/jpeg",
         width: 1200,
         height: 630,
         alt: "Samarth Chawla Portfolio",
