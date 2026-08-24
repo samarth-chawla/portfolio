@@ -6,6 +6,7 @@ import Hero from "@/sections/Hero";
 import Projects from "@/sections/Projects";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import AskChat from "@/components/AskChat";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -41,6 +42,7 @@ export default function Home() {
       <Experience />
       <Contact />
       <Footer />
+      <AskChat />
     </main>
   );
 }
