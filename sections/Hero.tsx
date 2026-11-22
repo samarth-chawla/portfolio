@@ -8,6 +8,7 @@ import {
   GitHub,
   LinkedIn,
   Mail,
+  WhatsApp,
   X,
   ArrowDown,
   Code,
@@ -70,6 +71,13 @@ const Hero = () => {
       label: "Email",
       icon: Mail,
       hoverColor: "hover:bg-sky-500 hover:border-sky-500 hover:text-white",
+    },
+    {
+      href: "https://wa.me/919971445751",
+      label: "WhatsApp",
+      icon: WhatsApp,
+      strokeWidth: 1,
+      hoverColor: "hover:bg-green-700 hover:border-green-700 hover:text-white",
     },
   ];
 
@@ -151,7 +159,11 @@ const Hero = () => {
                     aria-label={social.label}
                     className={`group inline-flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white/50 text-neutral-600 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:text-neutral-300 sm:h-11 sm:w-11 ${social.hoverColor}`}
                   >
-                    {Icon && <Icon size={18} />}
+                    <Icon
+                      size={18}
+                      strokeWidth={social.strokeWidth}
+                      aria-hidden="true"
+                    />
                   </a>
                 );
               })}
