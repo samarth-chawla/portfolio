@@ -48,6 +48,7 @@
 }
 
 .sm-toggle {
+  --sm-toggle-color: #111827;
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -62,7 +63,7 @@
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   cursor: pointer;
-  color: #111;
+  color: var(--sm-toggle-color);
   font-weight: 500;
   line-height: 1;
   overflow: visible;
@@ -136,7 +137,7 @@
   position: absolute;
   left: 50%;
   width: 100%;
-  height: 1.8px;
+  height: 2px;
   background: currentColor;
   border-radius: 999px;
   transform: translateX(-50%);
@@ -390,7 +391,7 @@
 }
 
 .dark .sm-toggle {
-  color: #fff;
+  --sm-toggle-color: #fff;
   background: rgba(19, 19, 19, 0.84);
   border-color: rgba(255, 255, 255, 0.22);
 }

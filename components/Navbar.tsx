@@ -3,7 +3,7 @@ import { Bebas_Neue, Space_Grotesk } from "next/font/google";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Eye, Moon, Sun } from "lucide-react";
+import { Eye, FileText, Moon, Sun } from "lucide-react";
 import logo from "../public/logo.webp";
 import StaggeredMenu from "@/components/StaggeredMenu.jsx";
 import { useTheme } from "next-themes";
@@ -201,10 +201,11 @@ const Navbar = () => {
             href="https://drive.google.com/file/d/1wxevJCfbXOQ_vbISqrlojHYCPeHNrjCd/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-neutral-900 transition hover:bg-white/70 dark:text-white dark:hover:bg-white/10"
+            className="inline-flex h-9 items-center justify-center gap-1.5 whitespace-nowrap rounded-full px-2.5 text-xs font-semibold text-neutral-900 transition hover:bg-white/70 dark:text-white dark:hover:bg-white/10"
             aria-label="View resume"
           >
-            <Eye size={17} />
+            <FileText size={16} aria-hidden="true" />
+            Resume
           </a>
         </div>
 
@@ -217,8 +218,7 @@ const Navbar = () => {
           actionItems={actionItems}
           colors={["#0f172a", "#2563eb", "#22d3ee"]}
           accentColor="#2563eb"
-          menuButtonColor={isDark ? "#ffffff" : "#111827"}
-          openMenuButtonColor={isDark ? "#ffffff" : "#111827"}
+          menuButtonColor="var(--sm-toggle-color)"
           changeMenuColorOnOpen={false}
           displayItemNumbering
         />
