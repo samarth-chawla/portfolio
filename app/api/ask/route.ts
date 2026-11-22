@@ -35,7 +35,7 @@ PROJECTS:
 - SafeRoute (2025): safety-focused navigation web app with interactive maps (React Leaflet), dynamic route plotting, heatmap overlays, and route safety scoring using crime stats, lighting, and traffic signals. React, Leaflet, Tailwind, Node.js, Express. Live: https://safe-route-119-frontend.onrender.com/ | Code: https://github.com/samarth-chawla/SafeRoute
 - TaskFlow Multilevel (2025): full-stack task platform for multi-level teams with role-aware actions, approvals, and a dashboard-first workflow. PERN stack. Live: https://taskflow-multilevel-1.onrender.com/ | Code: https://github.com/samarth-chawla/TaskFlow-MultiLevel
 
-RESUME: https://drive.google.com/file/d/1UpcCv0KjWrcWXjHYm6KJbOfqj2HYQsBT/view?usp=sharing`;
+RESUME: https://drive.google.com/file/d/1wxevJCfbXOQ_vbISqrlojHYCPeHNrjCd/view?usp=drive_link`;
 
 const MAX_MESSAGE_LENGTH = 1000;
 const MAX_HISTORY = 12;

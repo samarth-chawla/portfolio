@@ -177,7 +177,7 @@ const Navbar = () => {
       ariaLabel: "View resume",
       onClick: () =>
         window.open(
-          "https://drive.google.com/file/d/1UpcCv0KjWrcWXjHYm6KJbOfqj2HYQsBT/view?usp=sharing",
+          "https://drive.google.com/file/d/1wxevJCfbXOQ_vbISqrlojHYCPeHNrjCd/view?usp=drive_link",
           "_blank",
           "noopener noreferrer",
         ),
@@ -198,7 +198,7 @@ const Navbar = () => {
           </button>
 
           <a
-            href="https://drive.google.com/file/d/1UpcCv0KjWrcWXjHYm6KJbOfqj2HYQsBT/view?usp=sharing"
+            href="https://drive.google.com/file/d/1wxevJCfbXOQ_vbISqrlojHYCPeHNrjCd/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-9 w-9 items-center justify-center rounded-full text-neutral-900 transition hover:bg-white/70 dark:text-white dark:hover:bg-white/10"
@@ -305,7 +305,7 @@ const Navbar = () => {
 
               <Tooltip title="View Resume" sx={{ borderRadius: "10px" }}>
                 <a
-                  href="https://drive.google.com/file/d/1UpcCv0KjWrcWXjHYm6KJbOfqj2HYQsBT/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1wxevJCfbXOQ_vbISqrlojHYCPeHNrjCd/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
